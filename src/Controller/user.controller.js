@@ -17,14 +17,10 @@ exports.registerUser = async (req, res) => {
       ...req.body,
       password: hashPassword,
     });
-    res
-      .status(201)
-      .json({ user: user, message: `New User Is Added SuccesFully...` });
+    res.status(201).json({ user: user, message: `New User Is Added SuccesFully...` });
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: `Internal Server Error...${console.error()}` });
+    res.status(500).json({ message: `Internal Server Error...${console.error()}` });
   }
 };
 
@@ -48,9 +44,7 @@ exports.loginUser = async (req, res) => {
     res.status(200).json({ token, message: `User Login SuccesFully..` });
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: `Internal Server Error...${console.error()}` });
+    res.status(500).json({ message: `Internal Server Error...${console.error()}` });
   }
 };
 
@@ -65,9 +59,7 @@ exports.getAllUser = async (req, res) => {
     res.status(200).json(users);
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: `Internal Server Error...${console.error()}` });
+    res.status(500).json({ message: `Internal Server Error...${console.error()}` });
   }
 };
 
@@ -81,9 +73,7 @@ exports.getUser = async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: `Internal Server Error...${console.error()}` });
+    res.status(500).json({ message: `Internal Server Error...${console.error()}` });
   }
 };
 
@@ -95,14 +85,10 @@ exports.updateUser = async (req, res) => {
       return res.status(404).json({ message: `User Not Found....` });
     }
     user = await userService.updateUser(user._id, { ...req.body });
-    res
-      .status(201)
-      .json({ user, message: `User Details Updated SuccesFully...` });
+    res.status(201).json({ user, message: `User Details Updated SuccesFully...` });
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: `Internal Server Error...${console.error()}` });
+    res.status(500).json({ message: `Internal Server Error...${console.error()}` });
   }
 };
 
@@ -117,9 +103,7 @@ exports.deleteUser = async (req, res) => {
     res.status(200).json({ user, message: `User Deleted SuccesFully...` });
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: `Internal Server Error...${console.error()}` });
+    res.status(500).json({ message: `Internal Server Error...${console.error()}` });
   }
 };
 

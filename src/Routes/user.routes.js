@@ -8,7 +8,6 @@ const {
     getUser,
     updateUser,
     deleteUser,
-    updatePassword
 } = require('../../Controller/User/user.controller');
 
 
@@ -29,8 +28,5 @@ userRoute.put('/update-User',userVerifyToken, updateUser);
 
 // DELETE USER
 userRoute.delete('/delete-User',userVerifyToken, deleteUser);
-
-// UPDATE PASSWORD
-userRoute.put('/update-Password',userVerifyToken, updatePassword);
 
 module.exports = userRoute;

@@ -4,7 +4,7 @@ const userSchema = mongoose.Schema({
     firstName: {
         type: String
     },
-    lstName: {
+    lastName: {
         type: String
     },
     gender: {
@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: trusted,
+        unique: true,
     },
     isdelete: {
         type: Boolean,
